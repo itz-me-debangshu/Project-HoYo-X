@@ -1,3 +1,5 @@
 # Project HoYo-X
 
-Welcome to Project HoYo-X! This project is currently under development.
+## Welcome to Project HoYo-X! 
+<br>
+This project is currently under development.
