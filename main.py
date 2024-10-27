@@ -18,6 +18,7 @@ from databases.weapons import weapons_data as wpnData
 from databases.pfps import pfp_data as pfpData
 from databases.namecards import namecards_data as nmcData
 from databases.definations import prop, fightProp, itemType, equipType, appendProp
+from databases.charsInfo import characters as chr
 
 
 '''
@@ -43,7 +44,7 @@ def display_image(url):
 
 
 def fetch_user_data_by_uid(uid):
-    url = "https://enka.network/api/uid/" + uid + "?info"
+    url = "https://enka.network/api/uid/" + uid + "/"
     response_string = requests.get(url)
     
     # HANDLING ERRORS
@@ -103,6 +104,21 @@ def create_player_object(response):
     # object creation
     player = Player(uid, response['nickname'], signature, response['level'], worldLevel, response['nameCardId'], response['finishAchievementNum'], abyssFloor, abyssChamber, abyssStars, theaterAct, theaterStars)
     return player
+
+
+# Character Showcase
+def char_showcase_brief(response):
+    if "avatarInfoList" not in response:
+        print("Unable to fetch data from character showcase. Make sure ur showcase is PUBLIC and it is having atleast 1 character.")
+    else:
+        for i in response["avatarInfoList"]:
+            avatarId = i["avatarId"]    # int
+            characterName = chr[str(avatarId)]['Name']
+            characterLevel = i['propMap']['4001']['val']
+            
+
+    pass
+
 
 
    
