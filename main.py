@@ -181,16 +181,39 @@ try:
 except Exception as error:
     print(error)
 
-
+# ACHIVED CODES
 # display_image("https://enka.network/ui/UI_Gacha_AvatarImg_Nahida.png")
 
-# MENU DRIVEN
-# while True:
-#     print("\nMenu:")
-#     print("1. Display account info")
-#     print("2. Display character showcase")
-#     print("3. Show detailed character builds")
-# player.displayBriefInfo()
-# player.displayDetailedInfo()
-# ================================================================================
+# MENU
+while True:
+    print("\nMenu:")
+    print("1. Display brief account info")
+    print("2. Display detailed account info")
+    print("3. Exit")
+    choice = input("Enter your choice: ")
+    if choice == "1":
+        player.displayBriefInfo()
+        print("Do u want to continue ?")
+        cont = input("Y/N: ")
+        if cont.lower() == 'y' or cont.lower() == 'yes':
+            continue
+        else:
+            print("Thank you!")
+            break
+    elif choice == "2":
+        player.displayDetailedInfo()
+        print("Do u want to continue ?")
+        cont = input("Y/N: ")
+        if cont.lower() == 'y' or cont.lower() == 'yes':
+            continue
+        else:
+            print("Thank you!")
+            break
+    elif choice == "3":
+        print("Exiting...")
+        print("Thank you!")
+        break
+    else:
+        print("Invalid input")
+        continue
 
