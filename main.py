@@ -193,6 +193,7 @@ while True:
     choice = input("Enter your choice: ")
     if choice == "1":
         player.displayBriefInfo()
+        print()
         print("Do u want to continue ?")
         cont = input("Y/N: ")
         if cont.lower() == 'y' or cont.lower() == 'yes':
@@ -202,6 +203,7 @@ while True:
             break
     elif choice == "2":
         player.displayDetailedInfo()
+        print()
         print("Do u want to continue ?")
         cont = input("Y/N: ")
         if cont.lower() == 'y' or cont.lower() == 'yes':
